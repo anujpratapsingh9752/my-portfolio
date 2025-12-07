@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anuj Pratap Singh — DevOps Learner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071021; --card:#0f1724; --accent:#00c2ff; --muted:#9aa7b2; --glass:rgba(255,255,255,0.03);
+      --radius:16px; --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6f0f6;background:radial-gradient(1200px 400px at 10% 10%, rgba(0,194,255,0.06), transparent), radial-gradient(1000px 300px at 90% 90%, rgba(0,200,255,0.03), transparent), linear-gradient(180deg,#041027 0%, #061226 100%);}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:28px;}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6df);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021224;box-shadow:0 6px 18px rgba(3,18,28,.6)}
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;background:transparent;color:var(--muted);font-size:13px}
+    nav a.primary{background:linear-gradient(90deg,rgba(0,194,255,.12),rgba(0,194,255,.06));color:var(--accent);}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px;align-items:center}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:var(--radius);backdrop-filter:blur(6px);box-shadow:0 10px 30px rgba(2,12,20,.6)}
+    .hero h2{margin:0 0 10px;font-size:28px}
+    .tagline{color:var(--accent);font-weight:600;margin-bottom:12px}
+    .bio{color:var(--muted);line-height:1.6}
+
+    /* Profile */
+    .profile{background:var(--card);padding:18px;border-radius:14px;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .profile img{width:200px;height:200px;object-fit:cover;border-radius:12px;border:6px solid rgba(255,255,255,0.03)}
+    .contact small{color:var(--muted);display:block}
+    .socials{display:flex;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7ef);color:#021224;font-weight:600}
+
+    /* Sections */
+    section{margin-top:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--glass);padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .project{display:flex;gap:12px;align-items:center;padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .project img{width:120px;height:70px;object-fit:cover;border-radius:8px}
+    .project .meta{flex:1}
+
+    /* Skills */
+    .skill{margin-bottom:12px}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7ef);width:0}
+
+    /* Contact */
+    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6ff}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{margin:40px 0 20px;color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:992px){.hero{grid-template-columns:1fr;}.profile img{width:160px;height:160px}.grid-3{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr}.contact-form{grid-template-columns:1fr}.wrap{padding:18px}}
+    @media (max-width:520px){.grid-3{grid-template-columns:1fr}.brand h1{font-size:16px}}
+
+    /* Animated shapes */
+    .shapes{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;z-index:0}
+    .shape{position: absolute;border-radius:50%;filter:blur(40px);opacity:0.14}
+    .s1{width:360px;height:360px;left:-80px;top:-60px;background:linear-gradient(135deg,var(--accent),#6df)}
+    .s2{width:240px;height:240px;right:-60px;bottom:-40px;background:linear-gradient(135deg,#6df, #60ffa8)}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .gap{height:10px}
+  </style>
+</head>
+<body>
+  <div class="shapes"><div class="shape s1"></div><div class="shape s2"></div></div>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AP</div>
+        <div>
+          <h1>Anuj Pratap Singh</h1>
+          <p>DevOps Learner • Aspiring DevOps Engineer</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="primary">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="hero-card">
+          <p class="tagline">DevOps Learner • Linux | Containers | CI/CD</p>
+          <h2>Building reliable systems, automating workflows — learning every day.</h2>
+          <p class="bio">CSE student and passionate DevOps learner from Satna, Madhya Pradesh. Focused on Linux, shell scripting, Docker, Git and automation. I build fast, maintainable environments and aim to become a professional DevOps engineer.</p>
+
+          <div class="gap"></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)" href="#contact">Hire / Contact</a>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+            <div class="card" style="padding:12px;min-width:160px"> 
+              <small class="muted">Email</small>
+              <div><a href="mailto:anujpratapsingh9752@gmail.com">anujpratapsingh9752@gmail.com</a></div>
+            </div>
+            <div class="card" style="padding:12px;min-width:120px">
+              <small class="muted">Phone</small>
+              <div>+91 97525 01099</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile" aria-label="Profile card">
+          <!-- Replace the src below with your actual uploaded photo path (e.g. assets/profile.jpg) -->
+          <img src="anuj.jpg" alt="Anuj Pratap Singh">
+          <div style="text-align:center">
+            <div style="font-weight:700">Anuj Pratap Singh</div>
+            <div class="muted" style="font-size:13px">Satna, Madhya Pradesh, India</div>
+          </div>
+
+          <div class="socials">
+            <a title="GitHub" href="https://github.com/anujpratapsingh9752" target="_blank">GitHub</a>
+            <a title="YouTube" href="https://www.youtube.com/@baghelcreation9146" target="_blank">YouTube</a>
+            <a title="Instagram" href="https://www.instagram.com/adityaaa_z0?utm_source=qr&igsh=MXUyajNlNzMxaDZwbg==" target="_blank">Instagram</a>
+            <a title="Facebook" href="https://www.facebook.com/profile.php?id=61572787864734" target="_blank">Facebook</a>
+          </div>
+
+          <div style="width:100%;display:flex;gap:8px;justify-content:center;margin-top:10px">
+            <!-- Replace # with your resume PDF link when available -->
+            <a class="btn" href="#" id="resumeLink">Download Resume (PDF)</a>
+            <a class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)" href="/" id="profilePicAction">View Photo</a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2 style="margin:8px 0">Projects</h2>
+        <p class="muted">Some recent personal projects built with HTML, CSS and JavaScript.</p>
+        <div class="projects" style="margin-top:12px">
+          <div class="project">
+            <img src="assets/project-amazon.jpg" alt="Amazon Clone">
+            <div class="meta">
+              <strong>Amazon Clone</strong>
+              <div class="muted">HTML & CSS — A static front-end replica of Amazon layout.</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="assets/project-spotify.jpg" alt="Spotify Clone">
+            <div class="meta">
+              <strong>Spotify Clone</strong>
+              <div class="muted">HTML & CSS — Music player UI inspired layout.</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="assets/project-simo.jpg" alt="Simo Game">
+            <div class="meta">
+              <strong>Simo Game</strong>
+              <div class="muted">HTML, CSS & JavaScript — Interactive browser game.</div>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="assets/project-form.jpg" alt="Form Project">
+            <div class="meta">
+              <strong>Form Builder</strong>
+              <div class="muted">HTML & CSS — Responsive form with validation UI.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2 style="margin:8px 0">Skills</h2>
+        <p class="muted">Primary skills & familiar technologies.</p>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card">
+            <h3>Core DevOps</h3>
+            <div class="skill"><div class="muted">Linux & Shell Scripting</div><div class="bar" aria-hidden><i style="width:85%"></i></div></div>
+            <div class="skill"><div class="muted">Git & GitHub</div><div class="bar" aria-hidden><i style="width:80%"></i></div></div>
+            <div class="skill"><div class="muted">Docker</div><div class="bar" aria-hidden><i style="width:75%"></i></div></div>
+          </div>
+
+          <div class="card">
+            <h3>Frontend & Basics</h3>
+            <div class="skill"><div class="muted">HTML</div><div class="bar" aria-hidden><i style="width:90%"></i></div></div>
+            <div class="skill"><div class="muted">CSS</div><div class="bar" aria-hidden><i style="width:88%"></i></div></div>
+            <div class="skill"><div class="muted">JavaScript</div><div class="bar" aria-hidden><i style="width:60%"></i></div></div>
+          </div>
+
+          <div class="card">
+            <h3>Other Tools</h3>
+            <div class="skill"><div class="muted">MySQL</div><div class="bar" aria-hidden><i style="width:55%"></i></div></div>
+            <div class="skill"><div class="muted">MS Excel</div><div class="bar" aria-hidden><i style="width:50%"></i></div></div>
+            <div class="skill"><div class="muted">Willing to Learn</div><div class="bar" aria-hidden><i style="width:95%"></i></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 style="margin:8px 0">Contact</h2>
+        <p class="muted">Want to collaborate or have a job opportunity? Drop a message.</p>
+
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
+          <div style="flex:1;min-width:320px" class="card">
+            <h3>Get in touch</h3>
+            <form onsubmit="return sendMessage(event)">
+              <div class="contact-form">
+                <input class="input" name="name" placeholder="Your name" required>
+                <input class="input" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+              </div>
+              <div style="margin-top:10px"><button class="btn" type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+          <div style="width:320px" class="card">
+            <h3>Quick info</h3>
+            <div class="muted">Email</div>
+            <div><a href="mailto:anujpratapsingh9752@gmail.com">anujpratapsingh9752@gmail.com</a></div>
+            <div class="muted" style="margin-top:8px">Phone</div>
+            <div>+91 97525 01099</div>
+            <div class="muted" style="margin-top:8px">Location</div>
+            <div>Satna, Madhya Pradesh, India</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>Made with ❤️ by Anuj • Want changes? Tell me what to tweak.</footer>
+  </div>
+
+  <script>
+    // Small helpers: smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href=a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+
+    // Placeholder actions
+    document.getElementById('resumeLink').addEventListener('click',function(e){
+      // Replace with your resume PDF link. If you want, upload resume.pdf to root and change href here.
+      if(this.getAttribute('href') === '#'){
+        e.preventDefault();
+        alert('Replace the resume link in the code with your PDF file path (e.g. /assets/anuj_resume.pdf)');
+      }
+    });
+
+    document.getElementById('profilePicAction').addEventListener('click',function(e){
+      e.preventDefault();
+      alert('Replace the image src at top of file with your profile photo path (e.g. assets/profile.jpg)');
+    })
+
+    // sendMessage (demo) - uses mailto by default
+    function sendMessage(e){
+      e.preventDefault();
+      const f=e.target;
+      const name=f.name.value;
+      const email=f.email.value;
+      const message=f.message.value;
+      const subject = encodeURIComponent('Portfolio contact from '+name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);
+      window.location.href = 'mailto:anujpratapsingh9752@gmail.com?subject='+subject+'&body='+body;
+      return false;
+    }
+  </script>
+</body>
+</html>
